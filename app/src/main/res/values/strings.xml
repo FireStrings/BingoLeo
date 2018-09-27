@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">BingoLeo</string>
+    <string name="pressione_o_botao_abaixo_para_sortear">Utilize os botões abaixo para executar:</string>
+    <string name="sortear">Sortear</string>
+    <string name="bola_de_bingo">Bola de Bingo</string>
+    <string name="numeros_disponiveis">Números Disponíveis:</string>
+    <string name="numeros_sorteados">Números Sorteados:</string>
+    <string name="limpar">Limpar</string>
+</resources>

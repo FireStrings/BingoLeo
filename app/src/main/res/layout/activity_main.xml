@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraintLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <android.support.constraint.Guideline
+        android:id="@+id/verticalGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <TextView
+        android:id="@+id/textViewLabelPressione"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:gravity="start|center"
+        android:text="@string/pressione_o_botao_abaixo_para_sortear"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/buttonSortear"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:onClick="buttonSortear"
+        android:text="@string/sortear"
+        app:layout_constraintEnd_toStartOf="@+id/verticalGuideline"
+        app:layout_constraintStart_toStartOf="@+id/textViewLabelPressione"
+        app:layout_constraintTop_toBottomOf="@+id/textViewLabelPressione" />
+
+    <Button
+        android:id="@+id/buttonLimpar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:onClick="buttonLimpar"
+        android:text="@string/limpar"
+        app:layout_constraintEnd_toEndOf="@+id/textViewLabelPressione"
+        app:layout_constraintStart_toEndOf="@+id/verticalGuideline"
+        app:layout_constraintTop_toBottomOf="@+id/textViewLabelPressione" />
+
+
+
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_weight="1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonSortear">
+
+        <ImageView
+            android:id="@+id/imageViewBola"
+            android:layout_width="150sp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/bola_de_bingo"
+            android:cropToPadding="true"
+            android:scaleType="fitStart"
+            />
+
+        <TextView
+            android:id="@+id/textViewBola"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/imageViewBola"
+            android:layout_alignTop="@id/imageViewBola"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            android:textSize="80sp"
+            tools:textColor="@android:color/black" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/textViewListaDisponiveis"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8sp"
+        android:text="@string/numeros_disponiveis"
+        android:textSize="18sp"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="@+id/relativeLayout"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout" />
+
+    <ListView
+        android:id="@+id/listViewDisponiveis"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/constraintLayout"
+        app:layout_constraintEnd_toEndOf="@+id/textViewListaDisponiveis"
+        app:layout_constraintStart_toStartOf="@+id/textViewListaDisponiveis"
+        app:layout_constraintTop_toBottomOf="@+id/textViewListaDisponiveis" />
+
+    <TextView
+        android:id="@+id/textViewListaSorteados"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8sp"
+        android:gravity="center"
+        android:text="@string/numeros_sorteados"
+        android:textSize="18sp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@+id/relativeLayout"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout" />
+
+    <ListView
+        android:id="@+id/listViewSorteados"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/constraintLayout"
+        app:layout_constraintEnd_toEndOf="@+id/textViewListaSorteados"
+        app:layout_constraintStart_toStartOf="@+id/textViewListaSorteados"
+        app:layout_constraintTop_toBottomOf="@+id/textViewListaSorteados">
+
+    </ListView>
+
+
+</android.support.constraint.ConstraintLayout>
